@@ -30,7 +30,7 @@ module One_Bit(input [31:0] B_Add, input outcome, input clk, input reset, output
     logic BHT [0:1023];		// Create a BHT memory block that is 1024 entries and 1-bit wide
     logic [9:0] BHT_address;	// Stores the address for the entry look up
     
-    assign BHT_address = input[11:2];
+    //assign BHT_address = input[11:2];
 
-    endmodule 
+endmodule 
   
