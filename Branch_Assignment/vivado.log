@@ -123,3 +123,301 @@ INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
 update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
 set_property simulator_language Verilog [current_project]
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'BHT_Testbench'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/lucas/Desktop/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'BHT_Testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj BHT_Testbench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.srcs/sources_1/imports/Branch_Assignment/One_Bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module One_Bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.srcs/sources_1/imports/Branch_Assignment/BHT_Testbench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BHT_Testbench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot BHT_Testbench_behav xil_defaultlib.BHT_Testbench xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/lucas/Desktop/Xilinx/Vivado/2023.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot BHT_Testbench_behav xil_defaultlib.BHT_Testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.One_Bit
+Compiling module xil_defaultlib.BHT_Testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot BHT_Testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "BHT_Testbench_behav -key {Behavioral:sim_1:Functional:BHT_Testbench} -tclbatch {BHT_Testbench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source BHT_Testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+WARNING: File Test2.mem referenced from process on /home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.srcs/sources_1/imports/Branch_Assignment/BHT_Testbench.sv at line 43 cannot be opened for reading. Please ensure that this file is available in the current working directory.
+end of test, number of misses =          x, miss rate =           x
+$stop called at time : 10 ns : File "/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.srcs/sources_1/imports/Branch_Assignment/BHT_Testbench.sv" Line 75
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'BHT_Testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 8046.031 ; gain = 93.043 ; free physical = 4047 ; free virtual = 13575
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'BHT_Testbench'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/lucas/Desktop/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'BHT_Testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj BHT_Testbench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.srcs/sources_1/imports/Branch_Assignment/One_Bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module One_Bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.srcs/sources_1/imports/Branch_Assignment/BHT_Testbench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BHT_Testbench
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot BHT_Testbench_behav xil_defaultlib.BHT_Testbench xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/lucas/Desktop/Xilinx/Vivado/2023.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot BHT_Testbench_behav xil_defaultlib.BHT_Testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.One_Bit
+Compiling module xil_defaultlib.BHT_Testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot BHT_Testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "BHT_Testbench_behav -key {Behavioral:sim_1:Functional:BHT_Testbench} -tclbatch {BHT_Testbench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source BHT_Testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+end of test, number of misses =         30, miss rate =         100
+$stop called at time : 310 ns : File "/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.srcs/sources_1/imports/Branch_Assignment/BHT_Testbench.sv" Line 75
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'BHT_Testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'BHT_Testbench'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/lucas/Desktop/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'BHT_Testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj BHT_Testbench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.srcs/sources_1/imports/Branch_Assignment/One_Bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module One_Bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.srcs/sources_1/imports/Branch_Assignment/BHT_Testbench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BHT_Testbench
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot BHT_Testbench_behav xil_defaultlib.BHT_Testbench xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/lucas/Desktop/Xilinx/Vivado/2023.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot BHT_Testbench_behav xil_defaultlib.BHT_Testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.One_Bit
+Compiling module xil_defaultlib.BHT_Testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot BHT_Testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "BHT_Testbench_behav -key {Behavioral:sim_1:Functional:BHT_Testbench} -tclbatch {BHT_Testbench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source BHT_Testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+end of test, number of misses =         30, miss rate =         100
+$stop called at time : 310 ns : File "/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.srcs/sources_1/imports/Branch_Assignment/BHT_Testbench.sv" Line 75
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'BHT_Testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 8083.488 ; gain = 6.004 ; free physical = 3989 ; free virtual = 13522
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'BHT_Testbench'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/lucas/Desktop/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'BHT_Testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj BHT_Testbench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.srcs/sources_1/imports/Branch_Assignment/One_Bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module One_Bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.srcs/sources_1/imports/Branch_Assignment/BHT_Testbench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BHT_Testbench
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot BHT_Testbench_behav xil_defaultlib.BHT_Testbench xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/lucas/Desktop/Xilinx/Vivado/2023.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot BHT_Testbench_behav xil_defaultlib.BHT_Testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.One_Bit
+Compiling module xil_defaultlib.BHT_Testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot BHT_Testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "BHT_Testbench_behav -key {Behavioral:sim_1:Functional:BHT_Testbench} -tclbatch {BHT_Testbench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source BHT_Testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+end of test, number of misses =          1, miss rate =           3
+$stop called at time : 310 ns : File "/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.srcs/sources_1/imports/Branch_Assignment/BHT_Testbench.sv" Line 75
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'BHT_Testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'BHT_Testbench'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/lucas/Desktop/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'BHT_Testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj BHT_Testbench_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot BHT_Testbench_behav xil_defaultlib.BHT_Testbench xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/lucas/Desktop/Xilinx/Vivado/2023.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot BHT_Testbench_behav xil_defaultlib.BHT_Testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "BHT_Testbench_behav -key {Behavioral:sim_1:Functional:BHT_Testbench} -tclbatch {BHT_Testbench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source BHT_Testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+end of test, number of misses =          1, miss rate =           3
+$stop called at time : 310 ns : File "/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/project_1/project_1.srcs/sources_1/imports/Branch_Assignment/BHT_Testbench.sv" Line 75
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'BHT_Testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns

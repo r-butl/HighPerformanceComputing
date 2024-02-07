@@ -18,3 +18,17 @@ import_files -force -norecurse
 update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
 set_property simulator_language Verilog [current_project]
+launch_simulation
+source BHT_Testbench.tcl
+close_sim
+launch_simulation
+source BHT_Testbench.tcl
+close_sim
+launch_simulation
+source BHT_Testbench.tcl
+close_sim
+launch_simulation
+source BHT_Testbench.tcl
+close_sim
+launch_simulation
+source BHT_Testbench.tcl
