@@ -41,7 +41,7 @@ integer missrate;
 One_Bit UUT( B_Add, outcome, clk, reset, miss);
 
 initial begin 
- $readmemh("/home/lucas/Desktop/programming/HighPerformanceComputing/Branch_Assignment/Test2.mem",data_in); //change the file name 
+ $readmemh("/home/lucas/Desktop/programming/HighPerformanceComputing/one_bit_branch_predictor/Test2.mem",data_in); //change the file name 
     clk=0;
     B_Add=32'h00000000;
     vectornum=0;
